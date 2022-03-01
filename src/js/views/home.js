@@ -1,6 +1,7 @@
 import React , { useEffect, useState, useContext }  from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Jumbotron } from "../component/jumbotron";
 import { Context } from "../store/appContext";
 import { Card } from "./card"
 
@@ -10,6 +11,7 @@ export const Home = () =>{
 	//const [news, setNews] = useState([]);
 	return (
 		<div className="container">
+			<Jumbotron/>
 			<div className="scroll">
 				<div className="d-flex p-3 m-4">
 			{store.news.map((articule, index)=><Card  data={{

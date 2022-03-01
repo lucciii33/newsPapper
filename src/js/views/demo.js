@@ -15,7 +15,8 @@ export const Tech = () => {
 			{store.techNews.map((techArticule, index)=><Card  data={{
                     value1: techArticule.title ,
                     value2: techArticule.dateTime,
-					value3: techArticule.img
+					value3: techArticule.img,
+					value4: techArticule.link,
                   }}
                   key={index}
 				  />)}

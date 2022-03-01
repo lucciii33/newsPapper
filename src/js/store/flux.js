@@ -2,7 +2,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			news: [],
-			techNews: []
+			techNews: [],
+			btcNesw:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -35,18 +36,36 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
 					}
 				})
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data)
+						return setStore({ techNews: data })
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			},
+			get3Data: () => {
+				fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					}
+				})
 				.then(response => {
 					return response.json();
 				})
 				.then(data => {
-					console.log(data)
-					return setStore({ techNews: data })
+					console.log(data.data.coins)
+					return setStore({ btcNesw: data.data.coins})
 				})
 				.catch(err => {
 					console.error(err);
 				});
 			}
-
 		},
 
 

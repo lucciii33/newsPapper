@@ -13,10 +13,10 @@ export const Navbar = () => {
 				<Link to="/demo">
 					<button className="btn btn-primary m-2">Tech news</button>
 				</Link>
-				<Link to="/demo">
+				<Link to="/">
 					<button className="btn btn-primary m-2">all about weed</button>
 				</Link>
-				<Link to="/demo">
+				<Link to="/btnmap">
 					<button className="btn btn-primary m-2">Crypto</button>
 				</Link>
 			</div>

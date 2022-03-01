@@ -4,12 +4,14 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Tech } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Information } from "./views/information";
+import { BtnCard } from "./views/btnCard";
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { BtnMap } from "./views/btnmap";
 
 //create your first component
 const Layout = () => {
@@ -29,9 +31,8 @@ const Layout = () => {
 						<Route exact path="/demo">
 							<Tech />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route>
+						<Route exact path="/btnmap" component={BtnMap} />
+						
 						<Route exact path="/information/:name" component={Information}/>
 						<Route>
 							<h1>Not found!</h1>

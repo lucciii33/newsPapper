@@ -17,6 +17,7 @@ export const Information = props => {
 						<div className="card-body">
 							<h5 className="card-title">{data.value1}</h5>
 							<p className="card-text">{data.value2}</p>
+							<button className="btn btn-primary card-text">read <a>{data.value4}</a></button>
 							<p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>

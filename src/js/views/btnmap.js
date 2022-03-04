@@ -9,6 +9,13 @@ export const BtnMap = props => {
 	const params = useParams();
 	return (
 		<div>
+			<div className="position-relative">
+				<Link to="/NFT">
+					<button className="position-absolute top-0 start-50 translate-middle mb-4 mt-4">Top NFT sales!</button>
+				</Link>
+			</div>
+			<br></br>
+			<br></br>
 			{store.btcNesw.map((cryptoArticule, index)=><BtnCard  data={{
                     value1: cryptoArticule.name ,
                     value2: cryptoArticule.price,

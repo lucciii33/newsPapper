@@ -7,11 +7,13 @@ import { Tech } from "./views/demo";
 import injectContext from "./store/appContext";
 import { Information } from "./views/information";
 import { BtnCard } from "./views/btnCard";
+import {CardNft} from "./views/NFT"
 
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { BtnMap } from "./views/btnmap";
+import { Nft } from "./views/NFT";
 
 //create your first component
 const Layout = () => {
@@ -32,6 +34,7 @@ const Layout = () => {
 							<Tech />
 						</Route>
 						<Route exact path="/btnmap" component={BtnMap} />
+						<Route exact path="/NFT" component={Nft} />
 						
 						<Route exact path="/information/:name" component={Information}/>
 						<Route>

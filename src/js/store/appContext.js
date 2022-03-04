@@ -26,6 +26,7 @@ const injectContext = PassedComponent => {
 			state.actions.getData();
 			state.actions.getSeDate();
 			state.actions.get3Data();
+			state.actions.getNftData();
 			
 		  
 	  }, []);

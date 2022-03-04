@@ -7,9 +7,8 @@ export const BtnCard = ({data}) => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="card">
-	
-		  <div className="card-header">
+		<div className="card aligns-text-center justify-content-center">
+			<div className="card-header">
 			  <img src={data.value3} className="icon" style={{width:"5rem"}}/>
 			  <span>{data.value1}</span>
 		</div>

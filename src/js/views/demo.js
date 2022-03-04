@@ -10,7 +10,7 @@ export const Tech = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container">
+		<div className="container d-flex flex-wrap">
 			
 			{store.techNews.map((techArticule, index)=><Card  data={{
                     value1: techArticule.title ,

@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			news: [],
 			techNews: [],
-			btcNesw:[]
+			btcNesw: [],
+			nft:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -55,19 +56,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
 					}
 				})
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data.data.coins)
+						return setStore({ btcNesw: data.data.coins })
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			},
+			getNftData: () => {
+				fetch("https://top-nft-sales.p.rapidapi.com/sales/30d", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "top-nft-sales.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					}
+				})
 				.then(response => {
 					return response.json();
 				})
 				.then(data => {
-					console.log(data.data.coins)
-					return setStore({ btcNesw: data.data.coins})
+					console.log(data)
+					return setStore({ nft: data})
 				})
 				.catch(err => {
 					console.error(err);
 				});
-			}
-		},
-
+			},
+		}
 
 	}
 };

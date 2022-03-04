@@ -12,12 +12,13 @@ export const Home = () =>{
 	return (
 		<div className="container">
 			<Jumbotron/>
-			<div className="scroll">
-				<div className="d-flex p-3 m-4">
+			<div className="">
+				<div className="d-flex flex-row p-3 m-4" style={{ width: "100%", overflow: "auto" }}>
 			{store.news.map((articule, index)=><Card  data={{
                     value1: articule.title ,
                     value2: articule.description,
-					value3: articule.image.url
+					value3: articule.image.url,
+					value4: articule.url
                   }}
                   key={index}
 				  />)}

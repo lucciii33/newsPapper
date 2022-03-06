@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			techNews: [],
 			btcNesw: [],
 			nft: [],
-			recipes: []
+			recipes: [],
+			rest:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -106,6 +107,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(err);
 					});
 			},
+			getResData: () => {
+				fetch("https://worldwide-restaurants.p.rapidapi.com/search", {
+					"method": "POST",
+					"headers": {
+						"content-type": "application/x-www-form-urlencoded",
+						"x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					},
+					"body": {
+						"language": "en_US",
+						"limit": "30",
+						"location_id": "297704",
+						"currency": "USD"
+					}
+				})
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data.results)
+						return setStore({ rest: data.results})
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			}
 		}
 
 	}

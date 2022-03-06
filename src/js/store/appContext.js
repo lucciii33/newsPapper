@@ -28,6 +28,7 @@ const injectContext = PassedComponent => {
 			state.actions.get3Data();
 			state.actions.getNftData();
 			state.actions.getRecipeDatas();
+			state.actions.getResData();
 		  
 	  }, []);
 

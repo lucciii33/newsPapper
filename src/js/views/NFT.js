@@ -8,15 +8,14 @@ export const Nft = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div>
+		<div className="container d-flex flex-wrap">
 
-			{store.nft.map((nftArt, index)=> <CardNft  data={{
-                    value1: nftArt.collection,
-                    value2: nftArt.price,
-					value3: nftArt.nft_name,
-					value4: nftArt.collection_url,
-					value5: nftArt.date,
-                    value6: nftArt.nft_url,
+			{store.nft.map((article, index)=> <CardNft  data={{
+                    value1: article.title,
+                    value2: article.source,
+					value3: article.img,
+					value4: article.url,
+					
                   }}
                   key={index}
 				  />)}

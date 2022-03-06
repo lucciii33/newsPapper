@@ -11,7 +11,7 @@ export const BtnMap = props => {
 		<div>
 			<div className="position-relative">
 				<Link to="/NFT">
-					<button className="position-absolute top-0 start-50 translate-middle mb-4 mt-4">Top NFT sales!</button>
+					<button className="position-absolute top-0 start-50 translate-middle mb-4 mt-4">blockchain news!</button>
 				</Link>
 			</div>
 			<br></br>

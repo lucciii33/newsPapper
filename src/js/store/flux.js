@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			news: [],
 			techNews: [],
 			btcNesw: [],
-			nft:[]
+			nft: [],
+			recipes: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -68,23 +69,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			getNftData: () => {
-				fetch("https://top-nft-sales.p.rapidapi.com/sales/30d", {
+				fetch("https://blockchain-news1.p.rapidapi.com/news/NDTV", {
 					"method": "GET",
 					"headers": {
-						"x-rapidapi-host": "top-nft-sales.p.rapidapi.com",
+						"x-rapidapi-host": "blockchain-news1.p.rapidapi.com",
 						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
 					}
 				})
-				.then(response => {
-					return response.json();
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data)
+						return setStore({ nft: data })
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			},
+			getRecipeDatas: () => {
+				fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					}
 				})
-				.then(data => {
-					console.log(data)
-					return setStore({ nft: data})
-				})
-				.catch(err => {
-					console.error(err);
-				});
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data.hits)
+						return setStore({ recipes: data.hits })
+					})
+					.catch(err => {
+						console.error(err);
+					});
 			},
 		}
 

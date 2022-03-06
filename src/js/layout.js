@@ -8,6 +8,7 @@ import injectContext from "./store/appContext";
 import { Information } from "./views/information";
 import { BtnCard } from "./views/btnCard";
 import {CardNft} from "./views/NFT"
+import { Cucine } from "./views/cucine";
 
 
 import { Navbar } from "./component/navbar";
@@ -35,7 +36,7 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/btnmap" component={BtnMap} />
 						<Route exact path="/NFT" component={Nft} />
-						
+						<Route exact path="/cucine" component={Cucine} />
 						<Route exact path="/information/:name" component={Information}/>
 						<Route>
 							<h1>Not found!</h1>

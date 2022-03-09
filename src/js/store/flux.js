@@ -88,8 +88,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(err);
 					});
 			},
-			getRecipeDatas: () => {
-				fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=chicken", {
+			getRecipeDatas: (recipe) => {
+				fetch(`https://edamam-recipe-search.p.rapidapi.com/search?q=${recipe}`, {
 					"method": "GET",
 					"headers": {
 						"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",

@@ -15,8 +15,8 @@ export const Cucine = () => {
         <div className="d-flex justify-content-center align-items-center" >
             <div className=""><h1>Find any recipe</h1></div>
             <div>
-            <input className=""type="text" placeholder="recipes here" ></input>
-            <button onClick={actions.getRecipeDatas}>find!</button>
+            <input className=""type="text" placeholder="recipes here" value={recipe} onChange={(e)=>setRecipe(e.target.value)}></input>
+            <button onClick={()=>actions.getRecipeDatas(recipe)}>find!</button>
             </div>
         </div>
 

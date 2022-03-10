@@ -101,7 +101,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						console.log(data.hits)
-						return setStore({ recipes: data.hits })
+						return setStore({ recipes: data.hits})
 					})
 					.catch(err => {
 						console.error(err);

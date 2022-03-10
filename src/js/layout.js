@@ -9,6 +9,7 @@ import { Information } from "./views/information";
 import { BtnCard } from "./views/btnCard";
 import {CardNft} from "./views/NFT"
 import { Cucine } from "./views/cucine";
+import { CardCucine } from "./views/cardcucine";
 
 
 import { Navbar } from "./component/navbar";

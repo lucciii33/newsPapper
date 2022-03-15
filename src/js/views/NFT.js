@@ -11,9 +11,9 @@ export const Nft = props => {
 		<div className="container d-flex flex-wrap">
 
 			{store.nft.map((article, index)=> <CardNft  data={{
-                    value1: article.title,
-                    value2: article.source,
-					value3: article.img,
+                    value1: article.headline,
+                    value2: article.description,
+					value3: article.promoImage.url,
 					value4: article.url,
 					
                   }}

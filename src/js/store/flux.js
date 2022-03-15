@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			btcNesw: [],
 			nft: [],
 			recipes: [],
-			rest:[]
+			rest: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -70,10 +70,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			getNftData: () => {
-				fetch("https://blockchain-news1.p.rapidapi.com/news/NDTV", {
+
+				fetch("https://cnbc.p.rapidapi.com/news/v2/list-trending?tag=Articles&count=30", {
 					"method": "GET",
 					"headers": {
-						"x-rapidapi-host": "blockchain-news1.p.rapidapi.com",
+						"x-rapidapi-host": "cnbc.p.rapidapi.com",
 						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
 					}
 				})
@@ -81,8 +82,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(data => {
-						console.log(data)
-						return setStore({ nft: data })
+						console.log(data.data.mostPopularEntries.assets)
+						return setStore({ nft: data.data.mostPopularEntries.assets })
 					})
 					.catch(err => {
 						console.error(err);
@@ -101,7 +102,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						console.log(data.hits)
-						return setStore({ recipes: data.hits})
+						return setStore({ recipes: data.hits })
 					})
 					.catch(err => {
 						console.error(err);
@@ -127,7 +128,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						console.log(data.results)
-						return setStore({ rest: data.results})
+						return setStore({ rest: data.results })
 					})
 					.catch(err => {
 						console.error(err);

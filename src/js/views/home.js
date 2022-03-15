@@ -10,10 +10,13 @@ export const Home = () =>{
 	const { store, actions } = useContext(Context);
 	//const [news, setNews] = useState([]);
 	return (
-		<div className="container">
+		<div className="">
+			<div className="container">
+
 			<Jumbotron/>
-			<div className="">
-				<div className="d-flex flex-row p-3 m-4" style={{ width: "100%", overflow: "auto" }}>
+			</div>
+			<div className="container">
+				<div className="d-flex flex-row p-3 m-3" style={{ width: "100%", overflow: "auto" }}>
 			{store.news.map((articule, index)=><Card  data={{
                     value1: articule.title ,
                     value2: articule.description,

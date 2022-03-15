@@ -9,15 +9,15 @@ export const Navbar = () => {
 			</Link>
 			
 			<div className="ml-auto">
-			<div></div>
+			<div className="d-flex"></div>
 				<Link to="/demo">
-					<button className="btn btn-primary m-2">Tech news</button>
+					<span className=" m-2">Tech news</span>
 				</Link>
 				<Link to="cucine">
-					<button className="btn btn-primary m-2">all about recipes</button>
+					<span className=" m-2">all about recipes</span>
 				</Link>
 				<Link to="/btnmap">
-					<button className="btn btn-primary m-2">Crypto</button>
+					<span className=" m-2">Crypto</span>
 				</Link>
 			</div>
 		</nav>

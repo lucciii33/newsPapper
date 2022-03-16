@@ -28,6 +28,7 @@ export const Cucine = ({ data }) => {
                     value3: recipe.recipe.ingredientLines,
                     value4: recipe.recipe.mealType,
                     value5: recipe.recipe.label,
+                    value6: recipe.recipe.url
                 }}
                     key={index}
                 />)}

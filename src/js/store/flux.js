@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			btcNesw: [],
 			nft: [],
 			recipes: [],
-			rest: []
+			rest: [],
+			quote: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -129,6 +130,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						console.log(data.results)
 						return setStore({ rest: data.results })
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			},
+
+			quoteData: () => {
+				fetch("https://free-famous-quotes.p.rapidapi.com/", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "free-famous-quotes.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					}
+				})
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data)
+						return setStore({ quote: data })
 					})
 					.catch(err => {
 						console.error(err);

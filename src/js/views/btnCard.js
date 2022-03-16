@@ -7,11 +7,12 @@ export const BtnCard = ({data}) => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="card aligns-text-center justify-content-center">
-			<div className="card-header">
-			  <img src={data.value3} className="icon" style={{width:"5rem"}}/>
+		<div className="">
+
+		<div className="card ">
+			<div className="card" style={{ minWidth: "18rem", maxWidth: "18rem", minHeight: "16rem", margin: '0.7rem',padding: '10px', boxShadow: '5px 10px 18px #0d6efd'}}>>
+			  <img src={data.value3} className="icon" className="card-img-top" alt="..."/>
 			  <span>{data.value1}</span>
-		</div>
 		<div className="card-body">
 		  <blockquote className="blockquote mb-0">
 			<p>Price <strong>{data.value2}</strong></p>
@@ -20,7 +21,9 @@ export const BtnCard = ({data}) => {
 			<footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
 		  </blockquote>
 		</div>
+		</div>
 	  </div>
+		</div>
 		
 	);
 };

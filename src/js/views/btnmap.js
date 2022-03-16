@@ -8,12 +8,7 @@ export const BtnMap = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div>
-			<div className="position-relative">
-				<Link to="/NFT">
-					<button className="btn btn-primary position-absolute top-0 start-50 translate-middle mb-4 mt-4">Financial news!</button>
-				</Link>
-			</div>
+		<div className="container  d-flex flex-wrap">
 			<br></br>
 			<br></br>
 			{store.btcNesw.map((cryptoArticule, index)=><BtnCard  data={{

@@ -10,8 +10,8 @@ export const Home = () =>{
 	const { store, actions } = useContext(Context);
 	//const [news, setNews] = useState([]);
 	return (
-		<div className="">
-			<div className="container">
+		<div className="bg-light">
+			<div className="container mt-2">
 
 			<Jumbotron/>
 			</div>

@@ -11,7 +11,7 @@ export const CardCucine = ({data}) => {
 	return (
 		  
 			<div className="card" style={{ minWidth: "18rem", maxWidth: "22rem", minHeight: "16rem", margin: '0.7rem',padding: '10px', boxShadow: '5px 10px 18px #6A5ADF'}}>
-				<img src={data.value1} className="card-img-top" alt="..." style={{width: "100%", height: '12rem', objectFit: "cover"}}/>
+				<img src={data.value1} className="card-img-top" alt="..." style={{width: "100%", height: '18rem', objectFit: "cover"}}/>
 					<div className="card-body">
 						<h5 className="card-title">{data.value5}</h5>
 						<p className="card-text">  {data.value3}</p>

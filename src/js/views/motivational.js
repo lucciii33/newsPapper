@@ -11,12 +11,12 @@ export const Motivational = ({data}) => {
     return (
         <div className="">
            <div className="d-flex flex-row p-3 m-3" style={{ width: "100%", overflow: "auto" }}>
-			{store.quote.map((articule, index)=><MotiCard  data={{
-                    value1: articule.author ,
-                    value2: articule.text,
+			 {Object.keys(store.quote).map((articule, index)=> <MotiCard  data={{
+                    value1:  store.quote[articule],
+                    value2: store.quote[articule],
                   }}
                   key={index}
-				  />)}
+				  />)} 
 				</div>
         </div>
     );

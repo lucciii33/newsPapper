@@ -9,12 +9,12 @@ export const MotiCard = ({ data }) => {
 	const params = useParams();
 	return (
 
-		<div className="card" style={{ minWidth: "18rem", maxWidth: "18rem", minHeight: "16rem", margin: '0.7rem', padding: '10px', boxShadow: '5px 10px 18px #0d6efd' }}>
-			<div className="card-body">
-				<h5 className="card-title">{data.value1}</h5>
-				<p className="card-text">  {data.value2}</p>
+		<div className="">
+			
+				<h5 className="">{data.value1}</h5>
+				<p className="">  {data.value2}</p>
 
-			</div>
+
 		</div>
 
 

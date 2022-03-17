@@ -137,10 +137,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// },
 
 			quoteData: () => {
-				fetch("https://free-famous-quotes.p.rapidapi.com/", {
+				fetch("https://quotes21.p.rapidapi.com/quote", {
 					"method": "GET",
 					"headers": {
-						"x-rapidapi-host": "free-famous-quotes.p.rapidapi.com",
+						"x-rapidapi-host": "quotes21.p.rapidapi.com",
 						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
 					}
 				})

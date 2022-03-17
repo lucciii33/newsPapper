@@ -16,7 +16,7 @@ export const Card = ({data}) => {
 						<p className="card-text">  {data.value2}</p>
 
 						<Link to={{ pathname: "information/" + data.name, state: data }}>
-                <button className="btn btn-primary d-flex justify-content-between m-1">
+                <button className="btn btn-outline-primary text-decoration-none d-flex justify-content-between m-1">
                   Read articule
                 </button>
 						</Link>

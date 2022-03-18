@@ -4,15 +4,22 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { object } from "prop-types";
 
-export const MotiCard = ({ data }) => {
+export const MotiCard = (props) => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	// let quote = []
+	// for (let key in store.quote) {
+	//   let newArray = []
+	//   newArray.push(key)
+	//   newArray.push(store.quote[key])
+	//   quote.push(newArray)
+	//   }
 	return (
 
 		<div className="">
 			
-				<h5 className="">{data.value1}</h5>
-				<p className="">  {data.value2}</p>
+				<h5 className="">author: {props.data['author']}</h5>
+				<p className=""> quote: {props.data.quote}</p>
 
 
 		</div>
@@ -22,5 +29,6 @@ export const MotiCard = ({ data }) => {
 };
 
 MotiCard.propTypes = {
-	match: PropTypes.object
+	data: PropTypes.object,
+	
 };

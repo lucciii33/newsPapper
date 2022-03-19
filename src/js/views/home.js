@@ -11,7 +11,7 @@ export const Home = () =>{
 	//const [news, setNews] = useState([]);
 	return (
 		<div className="bg-light">
-			<div className="container mt-2">
+			<div className="container ">
 
 			<Jumbotron/>
 			</div>

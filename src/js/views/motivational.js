@@ -3,15 +3,40 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { MotiCard } from "./moticard"
+import Aos from "aos"
+import "aos/dist/aos.css"
+import "../../styles/home.css";
 
 export const Motivational = () => {
 
   const { store, actions } = useContext(Context);
   const params = useParams();
-
+ useEffect(()=>{
+   Aos.init({duration: 2000});
+ },[])
   return (
-    <div className="">
-      <div className="d-flex flex-row p-3 m-3" style={{ width: "100%", overflow: "auto" }}>
+    <div className="grids">
+      <div className="boxes" >
+      <MotiCard data = {store.quote}/> 
+      </div>
+
+      <div className="boxes" >
+      <MotiCard data = {store.quote}/> 
+      </div>
+
+      <div data-aos='fade-left' className="boxes" >
+      <MotiCard data = {store.quote}/> 
+      </div>
+
+      <div  data-aos='fade-right' className="boxes" >
+      <MotiCard data = {store.quote}/> 
+      </div>
+
+      <div data-aos='fade-left' className="boxes" >
+      <MotiCard data = {store.quote}/> 
+      </div>
+
+      <div data-aos='fade-right' className="boxes" >
       <MotiCard data = {store.quote}/> 
       </div>
     </div>

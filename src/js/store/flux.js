@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			nft: [],
 			recipes: [],
 			rest: [],
-			quote: []
+			quote: [],
+			quoteNumber:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -154,7 +155,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(err => {
 						console.error(err);
 					});
-			}
+			},
+			quoteDataNumber: () => {
+				fetch("https://numbersapi.p.rapidapi.com/1729/math?fragment=true&json=true", {
+					"method": "GET",
+					"headers": {
+						"x-rapidapi-host": "numbersapi.p.rapidapi.com",
+						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+					}
+				})
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log(data)
+						return setStore({ quoteNumber: data })
+					})
+					.catch(err => {
+						console.error(err);
+					});
+			},
+
 		}
 
 	}

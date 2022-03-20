@@ -30,6 +30,7 @@ const injectContext = PassedComponent => {
 			state.actions.getRecipeDatas();
 			//state.actions.getResData();
 			state.actions.quoteData();
+			state.actions.quoteDataNumber();
 		  
 	  }, []);
 

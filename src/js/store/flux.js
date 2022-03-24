@@ -157,13 +157,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			quoteDataNumber: () => {
-				fetch("https://numbersapi.p.rapidapi.com/1729/math?fragment=true&json=true", {
-					"method": "GET",
-					"headers": {
-						"x-rapidapi-host": "numbersapi.p.rapidapi.com",
-						"x-rapidapi-key": "cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1"
+				const options = {
+					method: 'GET',
+					headers: {
+						'X-RapidAPI-Host': 'numbersapi.p.rapidapi.com',
+						'X-RapidAPI-Key': 'cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1'
 					}
-				})
+				};
+				
+				fetch('https://numbersapi.p.rapidapi.com/random/trivia?min=10&max=20&fragment=true&json=true', options)
 					.then(response => {
 						return response.json();
 					})

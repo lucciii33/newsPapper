@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { MotiCard } from "./moticard"
+import {NumberCard } from "./numbercard"
 import Aos from "aos"
 import "aos/dist/aos.css"
-import "../../styles/home.css";
+import "../../styles/home.css";''
 
 export const Motivational = () => {
 
@@ -18,10 +19,12 @@ export const Motivational = () => {
     <div className="grids">
       <div className="boxes" >
       <MotiCard data = {store.quote}/> 
+      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" ></i></div>
       </div>
 
       <div className="boxes" >
-      <MotiCard data = {store.quote}/> 
+      <NumberCard data = {store.quoteNumber}/> 
+      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" ></i></div>
       </div>
 
       <div data-aos='fade-left' className="boxes" >

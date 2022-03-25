@@ -18,8 +18,8 @@ export const MotiCard = (props) => {
 
 		<div className="">
 			
-				<h5 className="">author: {props.data['content']}</h5>
-
+				<h5 className="m-2 p-2">author: {props.data['content']}</h5>
+				<h5 className="m-2 p-2">author: {props.data.content}</h5>
 
 		</div>
 

@@ -19,12 +19,12 @@ export const Motivational = () => {
     <div className="grids">
       <div className="boxes" >
       <MotiCard data = {store.quote}/> 
-      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" ></i></div>
+      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" onClick={() => actions.quoteData()} ></i></div>
       </div>
 
       <div className="boxes" >
       <NumberCard data = {store.quoteNumber}/> 
-      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" ></i></div>
+      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" onClick={() => actions.quoteDataNumber()} ></i></div>
       </div>
 
       <div data-aos='fade-left' className="boxes" >
@@ -39,9 +39,6 @@ export const Motivational = () => {
       <MotiCard data = {store.quote}/> 
       </div>
 
-      <div data-aos='fade-right' className="boxes" >
-      <MotiCard data = {store.quote}/> 
-      </div>
     </div>
   );
 };

@@ -137,7 +137,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 		});
 			// },
 
-			quoteData: () => {
+			quoteData: (quote) => {
 				fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
 					"method": "GET",
 					"headers": {
@@ -156,7 +156,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(err);
 					});
 			},
-			quoteDataNumber: () => {
+			quoteDataNumber: (num) => {
 				const options = {
 					method: 'GET',
 					headers: {

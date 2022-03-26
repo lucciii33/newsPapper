@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { MotiCard } from "./moticard"
+import { MotiCard2 } from "./moticard2"
 import {NumberCard } from "./numbercard"
 import Aos from "aos"
 import "aos/dist/aos.css"
@@ -28,11 +29,21 @@ export const Motivational = () => {
       </div>
 
       <div data-aos='fade-left' className="boxes" >
-      <MotiCard data = {store.quote}/> 
+      {store.quote2.slice(0,1).map((quote, index) => <MotiCard2 data={{
+                    value1: quote.text,
+                    value2: quote.author,
+                }}
+                    key={index}
+                />)}
       </div>
 
       <div  data-aos='fade-right' className="boxes" >
-      <MotiCard data = {store.quote}/> 
+      {store.quote2.slice(1,2).map((quote, index) => <MotiCard2 data={{
+                    value1: quote.text,
+                    value2: quote.author,
+                }}
+                    key={index}
+                />)} 
       </div>
 
       <div data-aos='fade-left' className="boxes" >

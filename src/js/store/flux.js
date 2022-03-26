@@ -7,8 +7,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			nft: [],
 			recipes: [],
 			rest: [],
-			quote: [],
-			quoteNumber:[]
+			quote: {},
+			quoteNumber:{},
+			quote2: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -150,7 +151,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 						console.log(data)
-						return setStore({ quote: data })
+						setStore({ quote: data })
 					})
 					.catch(err => {
 						console.error(err);
@@ -176,6 +177,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(err => {
 						console.error(err);
 					});
+			},
+
+			quote2Data: ()=>{
+
+				const options = {
+					method: 'GET',
+					headers: {
+						'X-RapidAPI-Host': 'famous-quotes4.p.rapidapi.com',
+						'X-RapidAPI-Key': 'cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1'
+					}
+				};
+				
+				fetch('https://famous-quotes4.p.rapidapi.com/random?category=all&count=2', options)
+				.then(response => {
+					return response.json();
+				})
+				.then(data => {
+					console.log(data)
+					return setStore({ quote2: data })
+				})
+				.catch(err => {
+					console.error(err);
+				});
 			},
 
 		}

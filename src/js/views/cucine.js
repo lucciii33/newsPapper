@@ -17,7 +17,7 @@ export const Cucine = ({ data }) => {
                 <div className=""><h1>Find any recipe</h1></div>
                 <div>
                     <input className="" type="text" placeholder="recipes here" value={recipe} onChange={(e) => setRecipe(e.target.value)}></input>
-                    <button onClick={() => actions.getRecipeDatas(recipe)}>find!</button>
+                    <button className='btn btn-primary' onClick={() => actions.getRecipeDatas(recipe)}>find!</button>
                 </div>
             </div>
             <div className="d-flex flex-wrap">

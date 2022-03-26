@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { object } from "prop-types";
 
-export const MotiCard = (props) => {
+export const MotiCard2 = ({data}) => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	// let quote = []
@@ -18,8 +18,8 @@ export const MotiCard = (props) => {
 
 		<div className="">
 			
-			<h5 className="m-2 p-2">author: {props.data.content}</h5>
-			<h5 className="m-2 p-2">author:</h5>
+			<h5 className="m-2 p-2">quote: {data.value1}</h5>
+			<h5 className="m-2 p-2">author: {data.value2}</h5>
 			
 			
 
@@ -29,7 +29,7 @@ export const MotiCard = (props) => {
 	);
 };
 
-MotiCard.propTypes = {
-	data: PropTypes.object,
+MotiCard2.propTypes = {
+	data: PropTypes.array,
 	
 };

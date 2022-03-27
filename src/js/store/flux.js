@@ -9,7 +9,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			rest: [],
 			quote: {},
 			quoteNumber:{},
-			quote2: []
+			quote2: [],
+			marvel:{},
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -196,6 +197,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data => {
 					console.log(data)
 					return setStore({ quote2: data })
+				})
+				.catch(err => {
+					console.error(err);
+				});
+			},
+
+			marvelQuote:()=>{
+				const options = {
+					method: 'GET',
+					headers: {
+						'X-RapidAPI-Host': 'marvel-quote-api.p.rapidapi.com',
+						'X-RapidAPI-Key': 'cac0ff8c40msh8d6b13eceeb7d54p149d44jsn09a410dae8d1'
+					}
+				};
+				
+				fetch('https://marvel-quote-api.p.rapidapi.com/', options)
+				.then(response => {
+					return response.json();
+				})
+				.then(data => {
+					console.log(data)
+					return setStore({ marvel: data })
 				})
 				.catch(err => {
 					console.error(err);

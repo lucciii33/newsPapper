@@ -31,6 +31,7 @@ const injectContext = PassedComponent => {
 			state.actions.quote2Data();
 			state.actions.quoteData();
 			state.actions.quoteDataNumber();
+			state.actions.marvelQuote();
 		  
 	  }, []);
 

@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 import { MotiCard } from "./moticard"
 import { MotiCard2 } from "./moticard2"
 import {NumberCard } from "./numbercard"
+import { MarvellCard } from "./marvellcard";
 import Aos from "aos"
 import "aos/dist/aos.css"
 import "../../styles/home.css";''
@@ -56,9 +57,9 @@ export const Motivational = () => {
 
       <div data-aos='fade-left' className="boxes" >
       <div className="d-flex justify-content-end">
-        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quote2Data()} ></i>
+        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.marvelQuote()} ></i>
         </div>
-      <MotiCard data = {store.quote}/> 
+      <MarvellCard data = {store.marvel}/> 
       </div>
 
     </div>

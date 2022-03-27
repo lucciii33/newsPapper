@@ -20,15 +20,20 @@ export const Motivational = () => {
     <div className="grids">
       <div className="boxes" >
       <MotiCard data = {store.quote}/> 
-      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" onClick={() => actions.quoteData()} ></i></div>
+      <div className="d-flex justify-content-end mb-1"><i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quoteData()} ></i></div>
       </div>
 
       <div className="boxes" >
       <NumberCard data = {store.quoteNumber}/> 
-      <div className="d-flex justify-content-end"><i className="fas fa-check-circle" onClick={() => actions.quoteDataNumber()} ></i></div>
+      <div className="d-flex justify-content-end">
+        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quoteDataNumber()} ></i>
+        </div>
       </div>
 
       <div data-aos='fade-left' className="boxes" >
+      <div className="d-flex justify-content-end">
+        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quote2Data()} ></i>
+        </div>
       {store.quote2.slice(0,1).map((quote, index) => <MotiCard2 data={{
                     value1: quote.text,
                     value2: quote.author,
@@ -38,6 +43,9 @@ export const Motivational = () => {
       </div>
 
       <div  data-aos='fade-right' className="boxes" >
+      <div className="d-flex justify-content-end">
+        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quote2Data()} ></i>
+        </div>
       {store.quote2.slice(1,2).map((quote, index) => <MotiCard2 data={{
                     value1: quote.text,
                     value2: quote.author,
@@ -47,6 +55,9 @@ export const Motivational = () => {
       </div>
 
       <div data-aos='fade-left' className="boxes" >
+      <div className="d-flex justify-content-end">
+        <i className="icon fas fa-arrow-alt-circle-right" onClick={() => actions.quote2Data()} ></i>
+        </div>
       <MotiCard data = {store.quote}/> 
       </div>
 

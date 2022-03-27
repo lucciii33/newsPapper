@@ -18,7 +18,7 @@ export const MotiCard2 = ({data}) => {
 
 		<div className="">
 			
-			<h5 className="m-2 p-2">quote: {data.value1}</h5>
+			<h5 className="m-2 p-2"><strong className="text-white">Quote: </strong> {data.value1}</h5>
 			<h5 className="m-2 p-2">author: {data.value2}</h5>
 			
 			

@@ -18,8 +18,8 @@ export const NumberCard = (props) => {
 
 		<div className="">
 			
-				<h5 className="m-2 p-2">author: {props.data.text}</h5>
-				<h5 className="m-2 p-2">author: {props.data.number}</h5>
+				<h5 className="m-2 p-2"><strong className="text-white">Question: </strong> {props.data.text}</h5>
+				<h5 className="m-2 p-2"><strong className="text-white">number: </strong> {props.data.number}</h5>
 
 
 		</div>

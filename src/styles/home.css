@@ -16,3 +16,12 @@
 .icon{
    font-size: 35px;
 }
+
+.container1 {
+   position: absolute;
+   top:50%;
+   left: 50%;
+   transform: translate(-50% , -50%);
+   border: 2px solid #246b9c;
+   padding: 2rem;
+   }

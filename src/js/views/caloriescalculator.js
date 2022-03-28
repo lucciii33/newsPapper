@@ -15,24 +15,52 @@ export const CaloriesCalculator = ({ data }) => {
         male: "",
         female: ""
     });
+   {/*
 
+Mujeres
+
+[655 + (9.6 x Peso kg) ] + [ (1.8 x Altura cm) – (4.7 x Edad)] x Factor actividad
+
+Hombres
+
+[66 + (13.7 x Peso kg) ] + [ (5 x Altura cm) – (6.8 x Edad)] x Factor actividad
+
+   result1 = ""
+   result2 = ""
+   result3 = ""
+    let male = 665
+    let peso = ()=>{
+        9.6+formValues.weight
+        result1 = male + peso
+        return result1
+    } 
+    let altura = ()=>{
+        1.8*formValues.height
+        result2 = result1 + altura
+        return result2
+    }
+    let edad = ()=>{
+        4.7+formValues.age
+        result3 = result2 - edad
+        return result3
+    } 
+    ///////////////////////////////
+
+    let menFormula = ()=>{
+
+        
+        }*/}
+       
 
     return (
-        <div className="container">
+        <div className="container1">
+            <div className="m-2">gender:
 
-            <div>
-                <label>age
-                    <input value ={formValues.age} onChange={(e)=> setFormValues({...formValues,age:e.target.value}) }></input>
-                </label>
-                <p>between 15-80</p>
-            </div>
-            <div>
-                <h2>Gender</h2>
-                <label for="male">male
+                <label for="male" className="m-2">male
                     <input type='radio' 
                     id="male"
                      name="gender"
-                    value={formValues == "male"?"male":""} 
+                    value={formValues == "male" ? "male" : ""} 
                     onChange={(e)=> setFormValues({...formValues,male:e.target.value}) }>
                     </input>
                 </label>
@@ -45,18 +73,26 @@ export const CaloriesCalculator = ({ data }) => {
 
                     </input>
                 </label>
+                
             </div>
-            <div>
+
+            <div className="">
+                <label>age
+                    <input value ={formValues.age} onChange={(e)=> setFormValues({...formValues,age:e.target.value}) }></input>
+                </label>
+                <p>between 15-80</p>
+            </div>
+            <div className="p-2 m-2">
                 <label>
                     Height <input type='text'value ={formValues.height} onChange={(e)=> setFormValues({...formValues,height:e.target.value}) }></input>
                 </label>
             </div>
-            <div>
+            <div className="p-2 m-2">
                 <label>
                     Weight <input type='text'value ={formValues.weight} onChange={(e)=> setFormValues({...formValues,weight:e.target.value}) }></input>
                 </label>
             </div>
-            <div className="dropdown">
+            <div className="dropdown m-2">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown button
                 </button>
@@ -71,7 +107,7 @@ export const CaloriesCalculator = ({ data }) => {
                 </ul>
             </div>
             <div>
-                <button onClick={()=> actions.calculatorCalories(formValues,)}>Calculate</button>
+                <button className="m-2" onClick={()=> actions.calculatorCalories(formValues,)}>Calculate</button>
                 <button>Clear</button>
             </div>
         </div>

@@ -11,6 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			quoteNumber:{},
 			quote2: [],
 			marvel:{},
+			calories: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -224,6 +225,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error(err);
 				});
 			},
+			calculatorCalories: (user) => {
+				const newCalculator = getStore().calories;
+				newCalculator.push(user)
+				setStore({ calories: newUser });
+			}
 
 		}
 

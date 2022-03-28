@@ -33,7 +33,9 @@ export const Cucine = ({ data }) => {
                     key={index}
                 />)}
             </div>
-
+            <Link to="/caloriescalculator">
+				<button className="btn btn-primary">see calories</button>
+			</Link>
         </div>
 
     );

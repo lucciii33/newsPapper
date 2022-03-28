@@ -11,6 +11,7 @@ import {CardNft} from "./views/NFT"
 import { Cucine } from "./views/cucine";
 import { CardCucine } from "./views/cardcucine";
 import { Motivational } from "./views/motivational";
+import { CaloriesCalculator } from "./views/caloriescalculator";
 
 
 import { Navbar } from "./component/navbar";
@@ -42,6 +43,7 @@ const Layout = () => {
 						<Route exact path="/cucine" component={Cucine} />
 						<Route exact path="/motivational" component={Motivational} />
 						<Route exact path="/information/:name" component={Information}/>
+						<Route exact path="/caloriescalculator/" component={CaloriesCalculator}/>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

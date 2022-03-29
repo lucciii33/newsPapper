@@ -14,12 +14,13 @@ export const MotiCard = (props) => {
 	//   newArray.push(store.quote[key])
 	//   quote.push(newArray)
 	//   }
+	if(props.data === undefined || props.data.originator === undefined)return 'loading...'
 	return (
 
 		<div className="">
 			
-			<h5 className="m-2 p-2"><strong className="text-white">Quote: </strong> {props.data.content}</h5>
-			<h5 className="m-2 p-2">author:</h5>
+			<h5 className="m-2 p-2"><strong className="text-white">Quote: </strong> {props.data?.content}</h5>
+			<h5 className="m-2 p-2">author:{props.data?.originator?.name}</h5>
 			
 			
 

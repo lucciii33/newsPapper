@@ -12,8 +12,8 @@ export const CaloriesCalculator = ({ data }) => {
         age: "",
         height: "",
         weight: "",
-        male: "",
-        female: ""
+        gender: "",
+        
     });
    {/*
 
@@ -60,16 +60,18 @@ Hombres
                     <input type='radio' 
                     id="male"
                      name="gender"
-                    value={formValues == "male" ? "male" : ""} 
-                    onChange={(e)=> setFormValues({...formValues,male:e.target.value}) }>
+                    checked={formValues.gender == "male"} 
+
+                    onChange={(e)=> setFormValues({...formValues,gender:'male'}) }>
                     </input>
                 </label>
 
                 <label for="female">female
                     <input id="female" name="gender" 
                     type='radio'
-                    value={formValues.female}
-                    onChange={(e)=> setFormValues({...formValues,female:e.target.value}) }>
+                    checked={formValues.gender == "female"}
+
+                    onChange={(e)=> setFormValues({...formValues,gender:'female'}) }>
 
                     </input>
                 </label>

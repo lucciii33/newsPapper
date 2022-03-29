@@ -23,7 +23,7 @@ export const Tech = () => {
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
-			<Link to="/">
+			<Link to="caloriescalculator">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
 		</div>

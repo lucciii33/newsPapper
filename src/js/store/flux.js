@@ -219,7 +219,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 				.then(data => {
 					console.log(data)
-					return setStore({ marvel: data })
+					setStore({ marvel: data })
 				})
 				.catch(err => {
 					console.error(err);

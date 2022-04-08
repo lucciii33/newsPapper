@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { object } from "prop-types";
-import Spinner from 'react-bootstrap/Spinner'
+
 
 export const MarvellCard= (props) => {
 	const { store, actions } = useContext(Context);

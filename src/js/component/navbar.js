@@ -10,19 +10,19 @@ export const Navbar = () => {
 			
 			<div className="ml-auto">
 			<div className="d-flex text-decoration-none" ></div>
-				<Link to="/demo">
+				<Link to="/demo" className="text-decoration-none">
 					<span className=" m-2 ">Tech news</span>
 				</Link>
-				<Link to="/NFT">
+				<Link to="/NFT" className="text-decoration-none">
 					<span className=" m-2 ">Financial news</span>
 				</Link>
-				<Link to="cucine">
+				<Link to="cucine" className="text-decoration-none">
 					<span className=" m-2 ">all about recipes</span>
 				</Link>
-				<Link to="/btnmap">
+				<Link to="/btnmap" className="text-decoration-none">
 					<span className=" m-2 ">Crypto</span>
 				</Link>
-				<Link to="/motivational">
+				<Link to="/motivational"className="text-decoration-none">
 					<span className=" m-2 ">knowledge</span>
 				</Link>
 			</div>

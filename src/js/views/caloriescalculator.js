@@ -13,43 +13,46 @@ export const CaloriesCalculator = ({ data }) => {
         height: "",
         weight: "",
         gender: "",
+        activity: ""
+        
         
     });
-   {/*
+    const[answer, setAnswer]=useState('')
 
-Mujeres
+// Mujeres
 
-[655 + (9.6 x Peso kg) ] + [ (1.8 x Altura cm) – (4.7 x Edad)] x Factor actividad
+// [655 + (9.6 x Peso kg) ] + [ (1.8 x Altura cm) – (4.7 x Edad)] x Factor actividad
 
-Hombres
+// Hombres
 
-[66 + (13.7 x Peso kg) ] + [ (5 x Altura cm) – (6.8 x Edad)] x Factor actividad
+// [66 + (13.7 x Peso kg) ] + [ (5 x Altura cm) – (6.8 x Edad)] x Factor actividad
 
-   result1 = ""
-   result2 = ""
-   result3 = ""
-    let male = 665
-    let peso = ()=>{
-        9.6+formValues.weight
-        result1 = male + peso
-        return result1
-    } 
-    let altura = ()=>{
-        1.8*formValues.height
-        result2 = result1 + altura
-        return result2
+ let calculator =(object)=>{
+    if(object.gender == 655){
+
+        let female = object.gender
+        let weight = (9.6*object.weight)+female
+        let heigth = (1.8*object.height*2.54)
+        let age = 4.7*object.age
+        let activity = object.activity
+        let calories = weight +(heigth - age)*activity
+        setAnswer(calories)
+    } else if(object.gender == 66){
+        let male = object.gender
+        let weight = (9.6*object.weight)+male
+        let heigth = (1.8*object.height*2.54)
+        let age = 4.7*object.age
+        let activity = object.activity
+        let calories = weight +(heigth - age)*activity
+        setAnswer(calories)
+    }else{
+        setAnswer('gender not found')
     }
-    let edad = ()=>{
-        4.7+formValues.age
-        result3 = result2 - edad
-        return result3
-    } 
-    ///////////////////////////////
+     
+ }
 
-    let menFormula = ()=>{
 
         
-        }*/}
        
 
     return (
@@ -60,18 +63,18 @@ Hombres
                     <input type='radio' 
                     id="male"
                      name="gender"
-                    checked={formValues.gender == "male"} 
+                    checked={formValues.gender == 655} 
 
-                    onChange={(e)=> setFormValues({...formValues,gender:'male'}) }>
+                    onChange={(e)=> setFormValues({...formValues,gender:655}) }>
                     </input>
                 </label>
 
                 <label for="female">female
                     <input id="female" name="gender" 
                     type='radio'
-                    checked={formValues.gender == "female"}
+                    checked={formValues.gender == 655}
 
-                    onChange={(e)=> setFormValues({...formValues,gender:'female'}) }>
+                    onChange={(e)=> setFormValues({...formValues,gender:655}) }>
 
                     </input>
                 </label>
@@ -80,18 +83,18 @@ Hombres
 
             <div className="">
                 <label>age
-                    <input value ={formValues.age} onChange={(e)=> setFormValues({...formValues,age:e.target.value}) }></input>
+                    <input value ={formValues.age} onChange={(e)=> setFormValues({...formValues,age:e.target.value}) } placeholder="age"></input>
                 </label>
                 <p>between 15-80</p>
             </div>
             <div className="p-2 m-2">
                 <label>
-                    Height <input type='text'value ={formValues.height} onChange={(e)=> setFormValues({...formValues,height:e.target.value}) }></input>
+                    Height <input type='text'value ={formValues.height} onChange={(e)=> setFormValues({...formValues,height:e.target.value}) } placeholder="inches"></input>
                 </label>
             </div>
             <div className="p-2 m-2">
                 <label>
-                    Weight <input type='text'value ={formValues.weight} onChange={(e)=> setFormValues({...formValues,weight:e.target.value}) }></input>
+                    Weight <input type='text'value ={formValues.weight} onChange={(e)=> setFormValues({...formValues,weight:e.target.value}) } placeholder="Kilograms"></input>
                 </label>
             </div>
             <div className="dropdown m-2">
@@ -99,18 +102,17 @@ Hombres
                     Dropdown button
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li className="dropdown-item" href="#">Basal Metabolic Rate (BMR)</li>
-                    <li className="dropdown-item" href="#">Sedentary: littel or not exercises</li>
-                    <li className="dropdown-item" href="#">light: exercises 1-3times/week</li>
-                    <li className="dropdown-item" href="#">moderate: exercises 4-5times/week</li>
-                    <li className="dropdown-item" href="#">active: daily exercises or intense exercises 3-4times/week</li>
-                    <li className="dropdown-item" href="#">very active: intense exercises 6-7times/week</li>
-                    <li className="dropdown-item" href="#">extra active: very intense exercises daily or physical job</li>
+                    <li className="dropdown-item" href="#" onClick={()=>setFormValues({...formValues, activity:1.2})}>Sedentary: littel or not exercises</li>
+                    <li className="dropdown-item" href="#" onClick={()=>setFormValues({...formValues, activity:1.375})}>light: exercises 1-3times/week</li>
+                    <li className="dropdown-item" href="#" onClick={()=>setFormValues({...formValues, activity:1.55})}>moderate: exercises 4-5times/week</li>
+                    <li className="dropdown-item" href="#" onClick={()=>setFormValues({...formValues, activity:1.725})}>active: daily exercises or intense exercises 3-4times/week</li>
+                    <li className="dropdown-item" href="#" onClick={()=>setFormValues({...formValues, activity:1.9})}>very active: intense exercises 6-7times/week</li>
                 </ul>
             </div>
             <div>
-                <button className="m-2" onClick={()=> actions.calculatorCalories(formValues,)}>Calculate</button>
+                <button className="m-2" onClick={()=> calculator(formValues)}>Calculate</button>
                 <button>Clear</button>
+                {answer!=""&&<span> calories per day: {answer}</span>}
             </div>
         </div>
 

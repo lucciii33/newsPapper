@@ -37,10 +37,10 @@ export const CaloriesCalculator = ({ data }) => {
         let activity = object.activity
         let calories = weight +(heigth - age)*activity
         setAnswer(calories)
-    } else if(object.gender == 66){
+    } else if(object.gender == 66.5){
         let male = object.gender
-        let weight = (9.6*object.weight)+male
-        let heigth = (1.8*object.height*2.54)
+        let weight = (13.75*object.weight)+male
+        let heigth = (5.003*object.height*2.54)
         let age = 4.7*object.age
         let activity = object.activity
         let calories = weight +(heigth - age)*activity
@@ -51,13 +51,18 @@ export const CaloriesCalculator = ({ data }) => {
      
  }
 
-
+//  function checkRecipe(recipe) {
+//     return recipe < answer;
+//   }
         
        
 
     return (
-        <div className="container1">
-            <div className="m-2">gender:
+        <div className="">
+            <div className="container1">
+
+            
+            <div className=" m-2">gender:
 
                 <label for="male" className="m-2">male
                     <input type='radio' 
@@ -114,6 +119,23 @@ export const CaloriesCalculator = ({ data }) => {
                 <button>Clear</button>
                 {answer!=""&&<span> calories per day: {answer}</span>}
             </div>
+
+            </div>
+            {/* <div className="d-flex justify-content-center">
+                <p>find tou diet here</p>
+                <button onClick={() => actions.getRecipeDatas()}>click me</button>
+                {store.recipes.filter((recipe)=>recipe.calories > answer) => <CardCucine data={{
+                    value1: recipe.recipe.image,
+                    value2: recipe.recipe.calories,
+                    value3: recipe.recipe.ingredientLines,
+                    value4: recipe.recipe.mealType,
+                    value5: recipe.recipe.label,
+                    value6: recipe.recipe.url
+                }}
+                    key={index}
+                />)}
+            </div>
+             */}
         </div>
 
     );

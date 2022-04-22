@@ -13,19 +13,19 @@ export const Home = () =>{
 	const { store, actions } = useContext(Context);
 	//const [news, setNews] = useState([]);
 	return (
-		<div className="position-relative">
+		<div className="">
 			<div style={{backgroundColor: "#121316"}}>
 
 				<div className="title1 text-center">
-				<h1>They are distroying me!</h1>
-				<h2>click in the button and see!</h2>
-				<p>Welcome to TeensNews</p>
+				<h1>Hi I am the earth!</h1>
+				<h2>if you click me you will see what is happening</h2>
+				<p>By day the banished sun circles the earth like a grieving mother with a lamp.</p>
 				</div>
-				<Spline scene="https://draft.spline.design/6rm7mVxpNJ3gtjRX/scene.spline" />
 
 	  		<Link to="/newhome">
-				<button className="btn btn-danger position-absolute bottom-0 start-50 translate-middle-x">see calories</button>
+			  <Spline scene="https://draft.spline.design/6rm7mVxpNJ3gtjRX/scene.spline" />
 			</Link>
+				
 		</div>
 		</div>
 	)

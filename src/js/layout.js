@@ -12,6 +12,7 @@ import { Cucine } from "./views/cucine";
 import { CardCucine } from "./views/cardcucine";
 import { Motivational } from "./views/motivational";
 import { CaloriesCalculator } from "./views/caloriescalculator";
+import { NewHome } from "./views/newhome";
 
 
 import { Navbar } from "./component/navbar";
@@ -39,6 +40,7 @@ const Layout = () => {
 							<Tech />
 						</Route>
 						<Route exact path="/btnmap" component={BtnMap} />
+						<Route exact path="/newhome" component={NewHome} />
 						<Route exact path="/NFT" component={Nft} />
 						<Route exact path="/cucine" component={Cucine} />
 						<Route exact path="/motivational" component={Motivational} />

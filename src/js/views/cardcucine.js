@@ -16,7 +16,7 @@ export const CardCucine = ({ data }) => {
 				<h5 className="card-title">{data.value5}</h5>
 				<p className="card-text">  {data.value3}</p>
 				<p className="card-text">  {data.value4}</p>
-				<p className="card-text">  {data.value2}</p>
+				<p className="card-text"> calories: {data.value2}</p>
 				<a className="btn btn-primary d-flex justify-content-between m-1" href={data.value6} target="_blank">
 					Read articule
 				</a>

@@ -4,29 +4,29 @@ import "../../styles/home.css";
 import { Jumbotron } from "../component/jumbotron";
 import { Context } from "../store/appContext";
 import { Card } from "./card"
+import Spline from '@splinetool/react-spline';
+
+import { Link, useParams } from "react-router-dom";
 
 
 export const Home = () =>{
 	const { store, actions } = useContext(Context);
 	//const [news, setNews] = useState([]);
 	return (
-		<div className="bg-light">
-			<div className="container ">
+		<div className="position-relative">
+			<div style={{backgroundColor: "#121316"}}>
 
-			<Jumbotron/>
-			</div>
-			<div className="container">
-				<div className="d-flex flex-row p-3 m-3" style={{ width: "100%", overflow: "auto" }}>
-			{store.news.map((articule, index)=><Card  data={{
-                    value1: articule.title ,
-                    value2: articule.description,
-					value3: articule.image.url,
-					value4: articule.url
-                  }}
-                  key={index}
-				  />)}
+				<div className="title1 text-center">
+				<h1>They are distroying me!</h1>
+				<h2>click in the button and see!</h2>
+				<p>Welcome to TeensNews</p>
 				</div>
-			</div>
+				<Spline scene="https://draft.spline.design/6rm7mVxpNJ3gtjRX/scene.spline" />
+
+	  		<Link to="/newhome">
+				<button className="btn btn-danger position-absolute bottom-0 start-50 translate-middle-x">see calories</button>
+			</Link>
+		</div>
 		</div>
 	)
 } 

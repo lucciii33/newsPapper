@@ -74,6 +74,7 @@
 		]
 	},
 	"dependencies": {
+		"@splinetool/react-spline": "^2.0.0",
 		"aos": "^2.3.4",
 		"prop-types": "^15.7.2",
 		"query-string": "^7.0.1",
